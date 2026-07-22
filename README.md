@@ -30,3 +30,6 @@ codeinsight-ai/
 ├── README.md
 │
 └── main.py
+
+
+(code_insight) PS C:\Users\winne\CodeInsights_GitHub> 
