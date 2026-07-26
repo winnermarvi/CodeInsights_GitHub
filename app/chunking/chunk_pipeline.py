@@ -38,7 +38,6 @@ def build_repository_chunks(repository_path, inventory):
             })
 
 
-
     return {
         "chunks": all_chunks,
         "failed_files": failed_files
