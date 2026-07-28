@@ -26,3 +26,46 @@ def load_embeddings():
     connection.close()
 
     return loaded_embeddings
+
+
+def load_chunks_by_ids(similarities):
+
+    retrieved_chunks = []
+    ids = [id['id'] for id in similarities]
+
+    if len(ids) == 0:
+
+        return retrieved_chunks
+
+    connection = get_connection()
+    cursor = connection.cursor()
+
+    placeholders = ",".join(["?"] * len(ids))
+
+    query = f"SELECT * FROM chunks WHERE id IN ({placeholders})"
+
+    cursor.execute(query, ids)
+    rows = cursor.fetchall()
+
+    for row in rows:
+
+        chunk_id, chunk_type, name, content, embedding_json, metadata_json = row
+
+        # Parse JSON strings back to Python objects
+        embedding = json.loads(embedding_json) if embedding_json else []
+        metadata = json.loads(metadata_json) if metadata_json else {}
+
+        retrieved_chunks.append(
+            {
+                "id" : chunk_id,
+                "type" : chunk_type,
+                "name" : name,
+                "content":content,
+                "embedding" : embedding,
+                "metadata": metadata
+            }
+        )
+
+    connection.close()
+
+    return retrieved_chunks

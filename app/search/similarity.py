@@ -1,8 +1,4 @@
-from app.embedding.generator import embedding_model
 import numpy as np
-
-import numpy as np
-
 
 def cosine_similarity(a, b):
     a = np.asarray(a, dtype=np.float32)
@@ -20,15 +16,13 @@ def cosine_similarity(a, b):
 
 
 
-def similarity_score(query,embeddings):
+def compute_similarities(embedded_query,stored_embeddings,k=5):
 
     similarities = []
 
-    query_embedding = embedding_model.encode(query).tolist()
+    for embedding in stored_embeddings:
 
-    for embedding in embeddings:
-
-        score = cosine_similarity(query_embedding,embedding['embedding'])
+        score = cosine_similarity(embedded_query,embedding['embedding'])
 
         similarities.append(
             {
@@ -39,4 +33,4 @@ def similarity_score(query,embeddings):
 
     similarities.sort(key=lambda x: x["score"],reverse=True)
 
-    return similarities
+    return similarities[:k]
