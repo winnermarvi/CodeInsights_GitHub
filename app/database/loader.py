@@ -30,8 +30,8 @@ def load_embeddings():
 
 def load_chunks_by_ids(similarities):
 
-    retrieved_chunks = []
     ids = [id['id'] for id in similarities]
+    retrieved_chunks = []
 
     if len(ids) == 0:
 
@@ -67,5 +67,14 @@ def load_chunks_by_ids(similarities):
         )
 
     connection.close()
+
+    id_order = {}
+    for i,_id in enumerate(ids):
+
+        id_order[_id] = i
+
+    retrieved_chunks.sort(
+        key=lambda chunk: id_order[chunk["id"]]
+    )
 
     return retrieved_chunks
