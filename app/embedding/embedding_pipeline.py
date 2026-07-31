@@ -1,4 +1,4 @@
-from app.embedding.generator import generate_embedding
+from app.embedding.generator import generate_chunk_embedding
 
 
 def embedding_pipeline(chunks):
@@ -10,7 +10,7 @@ def embedding_pipeline(chunks):
 
         try:
 
-            embedding = generate_embedding(chunk)
+            embedding = generate_chunk_embedding(chunk)
 
             chunk["embedding"] = embedding
 
