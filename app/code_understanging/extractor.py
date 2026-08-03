@@ -6,6 +6,29 @@ def extract_repository_structure(tree):
     imports = set()
     functions = []
     classes = []
+
+    def extract_calls(node):
+
+        calls = []
+
+        def traverse_calls(current_node):
+
+            if current_node.type == "call":
+
+                function_node = current_node.child_by_field_name("function")
+
+                if function_node and function_node.type == "identifier":
+
+                    calls.append(
+                        function_node.text.decode("utf-8")
+                    )
+
+            for child in current_node.children:
+                traverse_calls(child)
+
+        traverse_calls(node)
+
+        return calls
     
 
     def traverse(node: Node):
@@ -36,7 +59,12 @@ def extract_repository_structure(tree):
 
                     function_name = child.text.decode("utf-8")
 
-                    functions.append({"name" : function_name})
+                    calls = extract_calls(node)
+
+                    functions.append({
+                        "name": function_name,
+                        "calls": calls
+                    })
 
                     break
 
@@ -62,8 +90,11 @@ def extract_repository_structure(tree):
 
                                     method_name = method_child.text.decode("utf-8")
 
+                                    calls = extract_calls(block_child)
+
                                     methods.append({
-                                        "name" : method_name
+                                        "name": method_name,
+                                        "calls": calls
                                     })
 
             classes.append({"name" :class_name, "methods" : methods })

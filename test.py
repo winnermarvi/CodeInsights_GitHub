@@ -1,11 +1,13 @@
-import os
-from pathlib import Path
-
-def add():
+def validate_user():
     pass
 
 
-class User:
+def create_session():
+    pass
 
-    def add():
-        pass
+
+def login():
+
+    validate_user()
+
+    create_session()
