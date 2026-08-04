@@ -5,6 +5,8 @@ from app.ingestion.metadata import build_metadata
 
 def ingestion_pipeline(repo_url):
 
+    repo_url = repo_url.strip()
+
     repo_path = clone_repository(repo_url)
 
     inventory = scan_repository(repo_path)

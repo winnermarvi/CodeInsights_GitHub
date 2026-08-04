@@ -12,9 +12,6 @@ def parse_file(file_path):
 
     extension = file_path.suffix.lower()
 
-    print(extension)
-    print(EXTENSION_TO_LANGUAGE)
-
     if extension not in EXTENSION_TO_LANGUAGE:
         raise ValueError(
             f"Unsupported file extension: {extension}"

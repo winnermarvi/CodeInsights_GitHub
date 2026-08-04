@@ -41,7 +41,11 @@ def build_file_lookup(graph):
 
         if node["type"] == "FILE":
 
-            module_name = node["name"].replace(".py", "")
+            module_name = (
+                node["name"]
+                .replace("/", ".")
+                .replace(".py", "")
+            )
 
             file_lookup[module_name] = node["id"]
 

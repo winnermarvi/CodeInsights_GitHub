@@ -1,50 +1,20 @@
-from app.code_understanging.parser import parse_file
-from app.code_understanging.extractor import extract_repository_structure
-from app.graph.graph_pipeline import graph_pipeline
+from app.repository.repository_pipeline import repository_pipeline
+from app.repository.repository_graph_pipeline import repository_graph_pipeline
+from app.graph.exporter import save_graph
+from app.graph.visualizer import visualize_graph
 
 
-file_path = r"C:\Users\winne\CodeInsights_GitHub\tests\auths.py"
+repo_url = "https://github.com/winnermarvi/CodeInsights_GitHub"
 
-tree = parse_file(file_path)
+repository_data = repository_pipeline(repo_url)
 
-print("Tree:", tree)
-
-if tree is None:
-    raise ValueError(
-        f"Parsing failed for {file_path}"
-    )
-
-extracted_data = extract_repository_structure(
-    tree
-)
-
-print("===== EXTRACTED DATA =====")
-print(extracted_data)
-
-graph = graph_pipeline(
-    file_name="test.py",
-    extracted_data=extracted_data
+repository_graph = repository_graph_pipeline(
+    repository_data
 )
 
 
-print("\n===== GRAPH =====")
-print(graph)
+save_graph(
+    repository_graph,
+    "repository_graph.json"
+)
 
-# def print_tree(node, prefix="", is_last=True, is_root=True):
-#     if is_root:
-#         print(node.type)
-#         child_prefix = ""
-#     else:
-#         connector = "└── " if is_last else "├── "
-#         print(f"{prefix}{connector}{f"{node.type}({node.text.decode()})"}")
-#         child_prefix = prefix + ("    " if is_last else "│   ")
-
-#     # Iterate through all children
-#     children = node.children
-#     count = len(children)
-#     for i, child in enumerate(children):
-#         is_child_last = (i == count - 1)
-#         print_tree(child, prefix=child_prefix, is_last=is_child_last, is_root=False)
-
-
-# print_tree(b.root_node)

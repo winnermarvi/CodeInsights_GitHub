@@ -1,0 +1,1063 @@
+{
+    "nodes": [
+        {
+            "id": 1,
+            "type": "FILE",
+            "name": "main.py",
+            "metadata": {
+                "path": "main.py"
+            }
+        },
+        {
+            "id": 2,
+            "type": "FILE",
+            "name": "test.py",
+            "metadata": {
+                "path": "test.py"
+            }
+        },
+        {
+            "id": 3,
+            "type": "FUNCTION",
+            "name": "validate_user",
+            "metadata": {
+                "file": "test.py"
+            }
+        },
+        {
+            "id": 4,
+            "type": "FUNCTION",
+            "name": "create_session",
+            "metadata": {
+                "file": "test.py"
+            }
+        },
+        {
+            "id": 5,
+            "type": "FUNCTION",
+            "name": "login",
+            "metadata": {
+                "file": "test.py"
+            }
+        },
+        {
+            "id": 6,
+            "type": "FILE",
+            "name": "tests/auths.py",
+            "metadata": {
+                "path": "tests/auths.py"
+            }
+        },
+        {
+            "id": 7,
+            "type": "FUNCTION",
+            "name": "login",
+            "metadata": {
+                "file": "tests/auths.py"
+            }
+        },
+        {
+            "id": 8,
+            "type": "FILE",
+            "name": "tests/database.py",
+            "metadata": {
+                "path": "tests/database.py"
+            }
+        },
+        {
+            "id": 9,
+            "type": "FUNCTION",
+            "name": "connect",
+            "metadata": {
+                "file": "tests/database.py"
+            }
+        },
+        {
+            "id": 10,
+            "type": "FILE",
+            "name": "tests/utils.py",
+            "metadata": {
+                "path": "tests/utils.py"
+            }
+        },
+        {
+            "id": 11,
+            "type": "FUNCTION",
+            "name": "validate_user",
+            "metadata": {
+                "file": "tests/utils.py"
+            }
+        },
+        {
+            "id": 12,
+            "type": "FILE",
+            "name": "app/chunking/chunker.py",
+            "metadata": {
+                "path": "app/chunking/chunker.py"
+            }
+        },
+        {
+            "id": 13,
+            "type": "FUNCTION",
+            "name": "build_chunks",
+            "metadata": {
+                "file": "app/chunking/chunker.py"
+            }
+        },
+        {
+            "id": 14,
+            "type": "FILE",
+            "name": "app/chunking/chunk_pipeline.py",
+            "metadata": {
+                "path": "app/chunking/chunk_pipeline.py"
+            }
+        },
+        {
+            "id": 15,
+            "type": "FUNCTION",
+            "name": "build_repository_chunks",
+            "metadata": {
+                "file": "app/chunking/chunk_pipeline.py"
+            }
+        },
+        {
+            "id": 16,
+            "type": "FILE",
+            "name": "app/code_understanging/extractor.py",
+            "metadata": {
+                "path": "app/code_understanging/extractor.py"
+            }
+        },
+        {
+            "id": 17,
+            "type": "FUNCTION",
+            "name": "extract_repository_structure",
+            "metadata": {
+                "file": "app/code_understanging/extractor.py"
+            }
+        },
+        {
+            "id": 18,
+            "type": "FILE",
+            "name": "app/code_understanging/models.py",
+            "metadata": {
+                "path": "app/code_understanging/models.py"
+            }
+        },
+        {
+            "id": 19,
+            "type": "FILE",
+            "name": "app/code_understanging/parser.py",
+            "metadata": {
+                "path": "app/code_understanging/parser.py"
+            }
+        },
+        {
+            "id": 20,
+            "type": "FUNCTION",
+            "name": "parse_file",
+            "metadata": {
+                "file": "app/code_understanging/parser.py"
+            }
+        },
+        {
+            "id": 21,
+            "type": "FILE",
+            "name": "app/database/connection.py",
+            "metadata": {
+                "path": "app/database/connection.py"
+            }
+        },
+        {
+            "id": 22,
+            "type": "FUNCTION",
+            "name": "get_connection",
+            "metadata": {
+                "file": "app/database/connection.py"
+            }
+        },
+        {
+            "id": 23,
+            "type": "FILE",
+            "name": "app/database/loader.py",
+            "metadata": {
+                "path": "app/database/loader.py"
+            }
+        },
+        {
+            "id": 24,
+            "type": "FUNCTION",
+            "name": "load_embeddings",
+            "metadata": {
+                "file": "app/database/loader.py"
+            }
+        },
+        {
+            "id": 25,
+            "type": "FUNCTION",
+            "name": "load_chunks_by_ids",
+            "metadata": {
+                "file": "app/database/loader.py"
+            }
+        },
+        {
+            "id": 26,
+            "type": "FILE",
+            "name": "app/database/schema.py",
+            "metadata": {
+                "path": "app/database/schema.py"
+            }
+        },
+        {
+            "id": 27,
+            "type": "FUNCTION",
+            "name": "create_schema",
+            "metadata": {
+                "file": "app/database/schema.py"
+            }
+        },
+        {
+            "id": 28,
+            "type": "FILE",
+            "name": "app/database/store.py",
+            "metadata": {
+                "path": "app/database/store.py"
+            }
+        },
+        {
+            "id": 29,
+            "type": "FUNCTION",
+            "name": "store_chunks",
+            "metadata": {
+                "file": "app/database/store.py"
+            }
+        },
+        {
+            "id": 30,
+            "type": "FILE",
+            "name": "app/embedding/embedding_pipeline.py",
+            "metadata": {
+                "path": "app/embedding/embedding_pipeline.py"
+            }
+        },
+        {
+            "id": 31,
+            "type": "FUNCTION",
+            "name": "embedding_pipeline",
+            "metadata": {
+                "file": "app/embedding/embedding_pipeline.py"
+            }
+        },
+        {
+            "id": 32,
+            "type": "FILE",
+            "name": "app/embedding/generator.py",
+            "metadata": {
+                "path": "app/embedding/generator.py"
+            }
+        },
+        {
+            "id": 33,
+            "type": "FUNCTION",
+            "name": "generate_chunk_embedding",
+            "metadata": {
+                "file": "app/embedding/generator.py"
+            }
+        },
+        {
+            "id": 34,
+            "type": "FUNCTION",
+            "name": "generate_query_embedding",
+            "metadata": {
+                "file": "app/embedding/generator.py"
+            }
+        },
+        {
+            "id": 35,
+            "type": "FILE",
+            "name": "app/embedding/validator.py",
+            "metadata": {
+                "path": "app/embedding/validator.py"
+            }
+        },
+        {
+            "id": 36,
+            "type": "FUNCTION",
+            "name": "validate_embeddings",
+            "metadata": {
+                "file": "app/embedding/validator.py"
+            }
+        },
+        {
+            "id": 37,
+            "type": "FILE",
+            "name": "app/graph/builder.py",
+            "metadata": {
+                "path": "app/graph/builder.py"
+            }
+        },
+        {
+            "id": 38,
+            "type": "FUNCTION",
+            "name": "create_graph",
+            "metadata": {
+                "file": "app/graph/builder.py"
+            }
+        },
+        {
+            "id": 39,
+            "type": "FUNCTION",
+            "name": "process_imports",
+            "metadata": {
+                "file": "app/graph/builder.py"
+            }
+        },
+        {
+            "id": 40,
+            "type": "FUNCTION",
+            "name": "build_file_lookup",
+            "metadata": {
+                "file": "app/graph/builder.py"
+            }
+        },
+        {
+            "id": 41,
+            "type": "FUNCTION",
+            "name": "get_next_id",
+            "metadata": {
+                "file": "app/graph/builder.py"
+            }
+        },
+        {
+            "id": 42,
+            "type": "FUNCTION",
+            "name": "build_file_graph",
+            "metadata": {
+                "file": "app/graph/builder.py"
+            }
+        },
+        {
+            "id": 43,
+            "type": "FUNCTION",
+            "name": "build_function_lookup",
+            "metadata": {
+                "file": "app/graph/builder.py"
+            }
+        },
+        {
+            "id": 44,
+            "type": "FUNCTION",
+            "name": "process_function_calls",
+            "metadata": {
+                "file": "app/graph/builder.py"
+            }
+        },
+        {
+            "id": 45,
+            "type": "FILE",
+            "name": "app/graph/edges.py",
+            "metadata": {
+                "path": "app/graph/edges.py"
+            }
+        },
+        {
+            "id": 46,
+            "type": "CLASS",
+            "name": "EdgeType",
+            "metadata": {
+                "file": "app/graph/edges.py"
+            }
+        },
+        {
+            "id": 47,
+            "type": "FUNCTION",
+            "name": "create_edge",
+            "metadata": {
+                "file": "app/graph/edges.py"
+            }
+        },
+        {
+            "id": 48,
+            "type": "FILE",
+            "name": "app/graph/graph_pipeline.py",
+            "metadata": {
+                "path": "app/graph/graph_pipeline.py"
+            }
+        },
+        {
+            "id": 49,
+            "type": "FUNCTION",
+            "name": "graph_pipeline",
+            "metadata": {
+                "file": "app/graph/graph_pipeline.py"
+            }
+        },
+        {
+            "id": 50,
+            "type": "FILE",
+            "name": "app/graph/nodes.py",
+            "metadata": {
+                "path": "app/graph/nodes.py"
+            }
+        },
+        {
+            "id": 51,
+            "type": "CLASS",
+            "name": "NodeType",
+            "metadata": {
+                "file": "app/graph/nodes.py"
+            }
+        },
+        {
+            "id": 52,
+            "type": "FUNCTION",
+            "name": "create_node",
+            "metadata": {
+                "file": "app/graph/nodes.py"
+            }
+        },
+        {
+            "id": 53,
+            "type": "FILE",
+            "name": "app/ingestion/clone.py",
+            "metadata": {
+                "path": "app/ingestion/clone.py"
+            }
+        },
+        {
+            "id": 54,
+            "type": "FUNCTION",
+            "name": "remove_readonly",
+            "metadata": {
+                "file": "app/ingestion/clone.py"
+            }
+        },
+        {
+            "id": 55,
+            "type": "FUNCTION",
+            "name": "clone_repository",
+            "metadata": {
+                "file": "app/ingestion/clone.py"
+            }
+        },
+        {
+            "id": 56,
+            "type": "FILE",
+            "name": "app/ingestion/ingestion_pipeline.py",
+            "metadata": {
+                "path": "app/ingestion/ingestion_pipeline.py"
+            }
+        },
+        {
+            "id": 57,
+            "type": "FUNCTION",
+            "name": "ingestion_pipeline",
+            "metadata": {
+                "file": "app/ingestion/ingestion_pipeline.py"
+            }
+        },
+        {
+            "id": 58,
+            "type": "FILE",
+            "name": "app/ingestion/language_detector.py",
+            "metadata": {
+                "path": "app/ingestion/language_detector.py"
+            }
+        },
+        {
+            "id": 59,
+            "type": "FUNCTION",
+            "name": "detect_language",
+            "metadata": {
+                "file": "app/ingestion/language_detector.py"
+            }
+        },
+        {
+            "id": 60,
+            "type": "FILE",
+            "name": "app/ingestion/metadata.py",
+            "metadata": {
+                "path": "app/ingestion/metadata.py"
+            }
+        },
+        {
+            "id": 61,
+            "type": "FUNCTION",
+            "name": "build_metadata",
+            "metadata": {
+                "file": "app/ingestion/metadata.py"
+            }
+        },
+        {
+            "id": 62,
+            "type": "FILE",
+            "name": "app/ingestion/scanner.py",
+            "metadata": {
+                "path": "app/ingestion/scanner.py"
+            }
+        },
+        {
+            "id": 63,
+            "type": "FUNCTION",
+            "name": "should_ignore",
+            "metadata": {
+                "file": "app/ingestion/scanner.py"
+            }
+        },
+        {
+            "id": 64,
+            "type": "FUNCTION",
+            "name": "scan_repository",
+            "metadata": {
+                "file": "app/ingestion/scanner.py"
+            }
+        },
+        {
+            "id": 65,
+            "type": "FILE",
+            "name": "app/search/search_pipeline.py",
+            "metadata": {
+                "path": "app/search/search_pipeline.py"
+            }
+        },
+        {
+            "id": 66,
+            "type": "FUNCTION",
+            "name": "search_pipeline",
+            "metadata": {
+                "file": "app/search/search_pipeline.py"
+            }
+        },
+        {
+            "id": 67,
+            "type": "FILE",
+            "name": "app/search/similarity.py",
+            "metadata": {
+                "path": "app/search/similarity.py"
+            }
+        },
+        {
+            "id": 68,
+            "type": "FUNCTION",
+            "name": "cosine_similarity",
+            "metadata": {
+                "file": "app/search/similarity.py"
+            }
+        },
+        {
+            "id": 69,
+            "type": "FUNCTION",
+            "name": "compute_similarities",
+            "metadata": {
+                "file": "app/search/similarity.py"
+            }
+        }
+    ],
+    "edges": [
+        {
+            "source": 2,
+            "relationship": "CONTAINS",
+            "target": 3
+        },
+        {
+            "source": 2,
+            "relationship": "CONTAINS",
+            "target": 4
+        },
+        {
+            "source": 2,
+            "relationship": "CONTAINS",
+            "target": 5
+        },
+        {
+            "source": 6,
+            "relationship": "CONTAINS",
+            "target": 7
+        },
+        {
+            "source": 8,
+            "relationship": "CONTAINS",
+            "target": 9
+        },
+        {
+            "source": 10,
+            "relationship": "CONTAINS",
+            "target": 11
+        },
+        {
+            "source": 12,
+            "relationship": "CONTAINS",
+            "target": 13
+        },
+        {
+            "source": 14,
+            "relationship": "CONTAINS",
+            "target": 15
+        },
+        {
+            "source": 16,
+            "relationship": "CONTAINS",
+            "target": 17
+        },
+        {
+            "source": 19,
+            "relationship": "CONTAINS",
+            "target": 20
+        },
+        {
+            "source": 21,
+            "relationship": "CONTAINS",
+            "target": 22
+        },
+        {
+            "source": 23,
+            "relationship": "CONTAINS",
+            "target": 24
+        },
+        {
+            "source": 23,
+            "relationship": "CONTAINS",
+            "target": 25
+        },
+        {
+            "source": 26,
+            "relationship": "CONTAINS",
+            "target": 27
+        },
+        {
+            "source": 28,
+            "relationship": "CONTAINS",
+            "target": 29
+        },
+        {
+            "source": 30,
+            "relationship": "CONTAINS",
+            "target": 31
+        },
+        {
+            "source": 32,
+            "relationship": "CONTAINS",
+            "target": 33
+        },
+        {
+            "source": 32,
+            "relationship": "CONTAINS",
+            "target": 34
+        },
+        {
+            "source": 35,
+            "relationship": "CONTAINS",
+            "target": 36
+        },
+        {
+            "source": 37,
+            "relationship": "CONTAINS",
+            "target": 38
+        },
+        {
+            "source": 37,
+            "relationship": "CONTAINS",
+            "target": 39
+        },
+        {
+            "source": 37,
+            "relationship": "CONTAINS",
+            "target": 40
+        },
+        {
+            "source": 37,
+            "relationship": "CONTAINS",
+            "target": 41
+        },
+        {
+            "source": 37,
+            "relationship": "CONTAINS",
+            "target": 42
+        },
+        {
+            "source": 37,
+            "relationship": "CONTAINS",
+            "target": 43
+        },
+        {
+            "source": 37,
+            "relationship": "CONTAINS",
+            "target": 44
+        },
+        {
+            "source": 45,
+            "relationship": "CONTAINS",
+            "target": 46
+        },
+        {
+            "source": 45,
+            "relationship": "CONTAINS",
+            "target": 47
+        },
+        {
+            "source": 48,
+            "relationship": "CONTAINS",
+            "target": 49
+        },
+        {
+            "source": 50,
+            "relationship": "CONTAINS",
+            "target": 51
+        },
+        {
+            "source": 50,
+            "relationship": "CONTAINS",
+            "target": 52
+        },
+        {
+            "source": 53,
+            "relationship": "CONTAINS",
+            "target": 54
+        },
+        {
+            "source": 53,
+            "relationship": "CONTAINS",
+            "target": 55
+        },
+        {
+            "source": 56,
+            "relationship": "CONTAINS",
+            "target": 57
+        },
+        {
+            "source": 58,
+            "relationship": "CONTAINS",
+            "target": 59
+        },
+        {
+            "source": 60,
+            "relationship": "CONTAINS",
+            "target": 61
+        },
+        {
+            "source": 62,
+            "relationship": "CONTAINS",
+            "target": 63
+        },
+        {
+            "source": 62,
+            "relationship": "CONTAINS",
+            "target": 64
+        },
+        {
+            "source": 65,
+            "relationship": "CONTAINS",
+            "target": 66
+        },
+        {
+            "source": 67,
+            "relationship": "CONTAINS",
+            "target": 68
+        },
+        {
+            "source": 67,
+            "relationship": "CONTAINS",
+            "target": 69
+        },
+        {
+            "source": 1,
+            "relationship": "IMPORTS",
+            "target": 16
+        },
+        {
+            "source": 1,
+            "relationship": "IMPORTS",
+            "target": 19
+        },
+        {
+            "source": 1,
+            "relationship": "IMPORTS",
+            "target": 48
+        },
+        {
+            "source": 14,
+            "relationship": "IMPORTS",
+            "target": 12
+        },
+        {
+            "source": 14,
+            "relationship": "IMPORTS",
+            "target": 19
+        },
+        {
+            "source": 19,
+            "relationship": "IMPORTS",
+            "target": 58
+        },
+        {
+            "source": 23,
+            "relationship": "IMPORTS",
+            "target": 21
+        },
+        {
+            "source": 26,
+            "relationship": "IMPORTS",
+            "target": 21
+        },
+        {
+            "source": 28,
+            "relationship": "IMPORTS",
+            "target": 21
+        },
+        {
+            "source": 30,
+            "relationship": "IMPORTS",
+            "target": 32
+        },
+        {
+            "source": 37,
+            "relationship": "IMPORTS",
+            "target": 45
+        },
+        {
+            "source": 37,
+            "relationship": "IMPORTS",
+            "target": 50
+        },
+        {
+            "source": 48,
+            "relationship": "IMPORTS",
+            "target": 37
+        },
+        {
+            "source": 56,
+            "relationship": "IMPORTS",
+            "target": 53
+        },
+        {
+            "source": 56,
+            "relationship": "IMPORTS",
+            "target": 58
+        },
+        {
+            "source": 56,
+            "relationship": "IMPORTS",
+            "target": 60
+        },
+        {
+            "source": 56,
+            "relationship": "IMPORTS",
+            "target": 62
+        },
+        {
+            "source": 65,
+            "relationship": "IMPORTS",
+            "target": 23
+        },
+        {
+            "source": 65,
+            "relationship": "IMPORTS",
+            "target": 32
+        },
+        {
+            "source": 65,
+            "relationship": "IMPORTS",
+            "target": 67
+        },
+        {
+            "source": 7,
+            "relationship": "CALLS",
+            "target": 11
+        },
+        {
+            "source": 7,
+            "relationship": "CALLS",
+            "target": 4
+        },
+        {
+            "source": 7,
+            "relationship": "CALLS",
+            "target": 11
+        },
+        {
+            "source": 15,
+            "relationship": "CALLS",
+            "target": 20
+        },
+        {
+            "source": 15,
+            "relationship": "CALLS",
+            "target": 13
+        },
+        {
+            "source": 24,
+            "relationship": "CALLS",
+            "target": 22
+        },
+        {
+            "source": 25,
+            "relationship": "CALLS",
+            "target": 22
+        },
+        {
+            "source": 27,
+            "relationship": "CALLS",
+            "target": 22
+        },
+        {
+            "source": 29,
+            "relationship": "CALLS",
+            "target": 22
+        },
+        {
+            "source": 31,
+            "relationship": "CALLS",
+            "target": 33
+        },
+        {
+            "source": 39,
+            "relationship": "CALLS",
+            "target": 47
+        },
+        {
+            "source": 42,
+            "relationship": "CALLS",
+            "target": 41
+        },
+        {
+            "source": 42,
+            "relationship": "CALLS",
+            "target": 52
+        },
+        {
+            "source": 42,
+            "relationship": "CALLS",
+            "target": 41
+        },
+        {
+            "source": 42,
+            "relationship": "CALLS",
+            "target": 52
+        },
+        {
+            "source": 42,
+            "relationship": "CALLS",
+            "target": 47
+        },
+        {
+            "source": 42,
+            "relationship": "CALLS",
+            "target": 41
+        },
+        {
+            "source": 42,
+            "relationship": "CALLS",
+            "target": 52
+        },
+        {
+            "source": 42,
+            "relationship": "CALLS",
+            "target": 47
+        },
+        {
+            "source": 42,
+            "relationship": "CALLS",
+            "target": 41
+        },
+        {
+            "source": 42,
+            "relationship": "CALLS",
+            "target": 52
+        },
+        {
+            "source": 42,
+            "relationship": "CALLS",
+            "target": 47
+        },
+        {
+            "source": 44,
+            "relationship": "CALLS",
+            "target": 47
+        },
+        {
+            "source": 44,
+            "relationship": "CALLS",
+            "target": 47
+        },
+        {
+            "source": 49,
+            "relationship": "CALLS",
+            "target": 38
+        },
+        {
+            "source": 49,
+            "relationship": "CALLS",
+            "target": 42
+        },
+        {
+            "source": 49,
+            "relationship": "CALLS",
+            "target": 40
+        },
+        {
+            "source": 49,
+            "relationship": "CALLS",
+            "target": 39
+        },
+        {
+            "source": 49,
+            "relationship": "CALLS",
+            "target": 43
+        },
+        {
+            "source": 49,
+            "relationship": "CALLS",
+            "target": 44
+        },
+        {
+            "source": 57,
+            "relationship": "CALLS",
+            "target": 55
+        },
+        {
+            "source": 57,
+            "relationship": "CALLS",
+            "target": 64
+        },
+        {
+            "source": 57,
+            "relationship": "CALLS",
+            "target": 59
+        },
+        {
+            "source": 57,
+            "relationship": "CALLS",
+            "target": 61
+        },
+        {
+            "source": 64,
+            "relationship": "CALLS",
+            "target": 63
+        },
+        {
+            "source": 66,
+            "relationship": "CALLS",
+            "target": 34
+        },
+        {
+            "source": 66,
+            "relationship": "CALLS",
+            "target": 24
+        },
+        {
+            "source": 66,
+            "relationship": "CALLS",
+            "target": 69
+        },
+        {
+            "source": 66,
+            "relationship": "CALLS",
+            "target": 25
+        },
+        {
+            "source": 69,
+            "relationship": "CALLS",
+            "target": 68
+        }
+    ]
+}
