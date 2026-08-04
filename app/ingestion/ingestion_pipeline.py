@@ -11,9 +11,10 @@ def ingestion_pipeline(repo_url):
 
     languages = detect_language(inventory)
 
-    metadata = build_metadata(repo_url,repo_path,inventory,languages)
+    metadata = build_metadata(repo_url,repo_path,inventory,languages)   
 
     return {
+        "repo_path": repo_path,
         "inventory": inventory,
         "languages": languages,
         "metadata": metadata,

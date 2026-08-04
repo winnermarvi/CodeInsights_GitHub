@@ -1,38 +1,33 @@
-from app.ingestion.ingestion_pipeline import ingestion_pipeline
 from app.code_understanging.parser import parse_file
 from app.code_understanging.extractor import extract_repository_structure
-from app.graph.builder import build_file_graph,build_function_lookup,process_function_calls
+from app.graph.graph_pipeline import graph_pipeline
 
 
-#a = ingestion_pipeline("https://github.com/winnermarvi/resume/")
+file_path = r"C:\Users\winne\CodeInsights_GitHub\tests\auths.py"
 
-graph = {
-    "nodes": [],
-    "edges": []
-}
+tree = parse_file(file_path)
 
-tree = parse_file(
-    r"C:\Users\winne\CodeInsights_GitHub\test.py"
+print("Tree:", tree)
+
+if tree is None:
+    raise ValueError(
+        f"Parsing failed for {file_path}"
+    )
+
+extracted_data = extract_repository_structure(
+    tree
 )
 
-extracted_data = extract_repository_structure(tree)
+print("===== EXTRACTED DATA =====")
+print(extracted_data)
 
-graph = build_file_graph(
-    graph,
-    "test.py",
-    extracted_data
+graph = graph_pipeline(
+    file_name="test.py",
+    extracted_data=extracted_data
 )
 
-function_lookup = build_function_lookup(
-    graph
-)
 
-graph = process_function_calls(
-    graph=graph,
-    extracted_data=extracted_data,
-    function_lookup=function_lookup
-)
-
+print("\n===== GRAPH =====")
 print(graph)
 
 # def print_tree(node, prefix="", is_last=True, is_root=True):
