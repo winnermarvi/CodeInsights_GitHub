@@ -1,20 +1,81 @@
-from app.repository.repository_pipeline import repository_pipeline
-from app.repository.repository_graph_pipeline import repository_graph_pipeline
-from app.graph.exporter import save_graph
-from app.graph.visualizer import visualize_graph
+from app.ingestion.ingestion_pipeline import ingestion_pipeline
+from app.chunking.chunk_pipeline import build_repository_chunks
+from app.embedding.embedding_pipeline import embedding_pipeline
+from app.database.store import store_chunks
+from app.database.loader import load_embeddings
+from app.rag.rag_pipeline import rag_pipeline
 
+from app.database.schema import create_schema
 
-repo_url = "https://github.com/winnermarvi/CodeInsights_GitHub"
+create_schema()
+from app.database.connection import get_connection
 
-repository_data = repository_pipeline(repo_url)
+conn = get_connection()
+cursor = conn.cursor()
 
-repository_graph = repository_graph_pipeline(
-    repository_data
+cursor.execute("""
+SELECT name
+FROM sqlite_master
+WHERE type='table'
+""")
+
+print(cursor.fetchall())
+
+conn.close()
+
+REPO_URL = "https://github.com/winnermarvi/CodeInsights_GitHub"
+
+# Phase 1
+ingestion_data = ingestion_pipeline(REPO_URL)
+
+repository_path = ingestion_data["repo_path"]
+inventory = ingestion_data["inventory"]
+
+print("\nTOTAL FILES:")
+print(len(inventory))
+
+# Phase 2
+chunk_data = build_repository_chunks(
+    repository_path=repository_path,
+    inventory=inventory
 )
 
+print("\nTOTAL CHUNKS:")
+print(len(chunk_data["chunks"]))
 
-save_graph(
-    repository_graph,
-    "repository_graph.json"
+print("\nFAILED FILES:")
+print(chunk_data["failed_files"])
+
+# Phase 3
+embedded_data = embedding_pipeline(
+    chunk_data
 )
 
+print("\nTOTAL EMBEDDED CHUNKS:")
+print(len(embedded_data["chunks"]))
+
+print("\nFAILED CHUNKS:")
+print(embedded_data["failed_chunks"])
+
+# Phase 4
+store_chunks(
+    embedded_data["chunks"]
+)
+
+print("\nSTORED TO DATABASE")
+
+#Phase 5
+embeddings = load_embeddings()
+
+print("\nTOTAL EMBEDDINGS IN DATABASE:")
+print(len(embeddings))
+
+question = "How does search_pipeline work?"
+
+response = rag_pipeline(question)
+
+print("\nQUESTION:")
+print(question)
+
+print("\nANSWER:")
+print(response)

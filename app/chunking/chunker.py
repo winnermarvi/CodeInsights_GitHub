@@ -1,7 +1,10 @@
 from tree_sitter import Node
+from pathlib import Path
 
 
 def build_chunks(tree, relative_path):
+
+    relative_path = Path(relative_path)
 
     chunks = []
 

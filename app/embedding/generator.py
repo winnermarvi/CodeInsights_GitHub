@@ -1,6 +1,6 @@
 from sentence_transformers import SentenceTransformer
 
-embedding_model = SentenceTransformer("jinaai/jina-embeddings-v2-base-code")
+embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
 
 def generate_chunk_embedding(chunk):
     """

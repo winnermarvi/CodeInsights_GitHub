@@ -22,7 +22,11 @@ def embedding_pipeline(chunks):
                     "name": chunk["name"],
                     "error": str(e)
                 }
-)
+            )   
+
+    print("\nSAMPLE CHUNK:")
+    print(chunk["name"])
+    print(chunk["embedding"][:5])
 
     return {
         "chunks": all_chunks,

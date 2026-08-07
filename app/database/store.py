@@ -13,15 +13,13 @@ def store_chunks(embedded_chunks):
 
         cursor.execute(
             """
-            INSERT INTO chunks(
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
+            INSERT INTO chunks (
                 type,
                 name,
                 content,
                 embedding,
                 metadata
             )
-            INSERT INTO chunks (type, name, content, embedding, metadata)
             VALUES (?, ?, ?, ?, ?)
             """,
             (

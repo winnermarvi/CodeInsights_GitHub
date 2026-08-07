@@ -21,10 +21,7 @@ def build_repository_chunks(repository_path, inventory):
 
             file_path = repository_path / item["relative_path"]
 
-            with open(file_path, "r", encoding="utf-8") as file:
-                source_code = file.read()
-
-            tree = parse_file(source_code)
+            tree = parse_file(file_path)
 
             chunks = build_chunks(tree, item["relative_path"])
 
