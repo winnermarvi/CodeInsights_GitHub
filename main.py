@@ -72,10 +72,18 @@ print(len(embeddings))
 
 question = "How does search_pipeline work?"
 
-response = rag_pipeline(question)
+# response = rag_pipeline(question)
 
-print("\nQUESTION:")
-print(question)
+from app.chat.chat_pipeline import chat_pipeline
 
-print("\nANSWER:")
+response = chat_pipeline(
+    question=question
+)
+
 print(response)
+
+from app.chat.conversation_memory import (
+    get_conversation_history
+)
+
+print(get_conversation_history())
