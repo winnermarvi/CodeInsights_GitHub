@@ -1,4 +1,4 @@
-def build_prompt(question, retrieved_chunks, max_context_chars=12000):
+def build_prompt(question, retrieved_chunks, conversation_history, max_context_chars=12000):
 
     system_prompt = """You are an expert software engineering assistant.
         Answer ONLY using the repository context provided in the user message.
@@ -40,10 +40,29 @@ def build_prompt(question, retrieved_chunks, max_context_chars=12000):
 
     repository_context = "\n\n".join(context_sections)
 
+    history_sections = []
+
+    for message in conversation_history:
+
+        role = message["role"].upper()
+
+        history_sections.append(
+            f"{role}: {message['content']}"
+        )
+
+    conversation_context = "\n".join(
+        history_sections
+    )
+
     user_prompt = f"""========================
         REPOSITORY CONTEXT
         ========================
         {repository_context}
+
+        ========================
+        CONVERSATION HISTORY
+        ========================
+        {conversation_context}
 
         ========================
         QUESTION

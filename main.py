@@ -82,6 +82,14 @@ response = chat_pipeline(
 
 print(response)
 
+question = "What does it call next?"
+
+response = chat_pipeline(
+    question=question
+)
+
+print(response)
+
 from app.chat.conversation_memory import (
     get_conversation_history
 )

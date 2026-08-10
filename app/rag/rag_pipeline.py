@@ -1,6 +1,7 @@
 from app.search.search_pipeline import search_pipeline
 from app.rag.prompt_builder import build_prompt
 from app.rag.response_generator import generate_response
+from app.chat.conversation_memory import get_conversation_history
 
 
 def build_sources(retrieved_chunks):
@@ -49,9 +50,12 @@ def rag_pipeline(question):
     for chunk in retrieved_chunks:
         print(chunk["name"])
 
+    conversation_history = get_conversation_history()
+
     system_prompt, user_prompt = build_prompt(
         question=question,
-        retrieved_chunks=retrieved_chunks
+        retrieved_chunks=retrieved_chunks,
+        conversation_history=conversation_history
     )
 
     answer = generate_response(
