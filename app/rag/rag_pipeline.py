@@ -44,12 +44,7 @@ def rag_pipeline(question):
     retrieved_chunks = search_pipeline(
         query=question
     )
-    print("\nRETRIEVED CHUNKS:")
-    print(len(retrieved_chunks))
-
-    for chunk in retrieved_chunks:
-        print(chunk["name"])
-
+    
     conversation_history = get_conversation_history()
 
     system_prompt, user_prompt = build_prompt(

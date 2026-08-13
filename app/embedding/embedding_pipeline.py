@@ -24,10 +24,6 @@ def embedding_pipeline(chunks):
                 }
             )   
 
-    print("\nSAMPLE CHUNK:")
-    print(chunk["name"])
-    print(chunk["embedding"][:5])
-
     return {
         "chunks": all_chunks,
         "failed_chunks": failed_chunks

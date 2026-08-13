@@ -94,7 +94,8 @@ def impact_analysis_pipeline(
             "changed_function": changed_function,
             "found": False,
             "dependencies": [],
-            "affected_files": []
+            "affected_files": [],
+            "risk_level": "LOW"
         }
 
     dependency_ids = find_direct_dependencies(
