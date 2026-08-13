@@ -1,13 +1,9 @@
 from pathlib import Path
-
-from app.ingestion.ingestion_pipeline import ingestion_pipeline
 from app.code_understanging.parser import parse_file
 from app.code_understanging.extractor import extract_repository_structure
 
 
-def repository_pipeline(repo_url):
-
-    ingestion_result = ingestion_pipeline(repo_url)
+def repository_pipeline(ingestion_result):
 
     repo_path = ingestion_result["repo_path"]
     inventory = ingestion_result["inventory"]

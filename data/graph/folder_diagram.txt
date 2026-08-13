@@ -1,0 +1,64 @@
+.gitignore
+.vscode
+│   settings.json
+LICENSE
+README.md
+app
+│   chat
+│   │   chat_pipeline.py
+│   │   conversation_memory.py
+│   │   query_rewriter.py
+│   chunking
+│   │   chunk_pipeline.py
+│   │   chunker.py
+│   code_understanging
+│   │   extractor.py
+│   │   models.py
+│   │   parser.py
+│   database
+│   │   connection.py
+│   │   loader.py
+│   │   schema.py
+│   │   store.py
+│   embedding
+│   │   embedding_pipeline.py
+│   │   generator.py
+│   │   validator.py
+│   graph
+│   │   builder.py
+│   │   edges.py
+│   │   exporter.py
+│   │   graph_pipeline.py
+│   │   nodes.py
+│   │   visualizer.py
+│   impact
+│   │   impact_analysis_pipeline.py
+│   ingestion
+│   │   clone.py
+│   │   ingestion_pipeline.py
+│   │   language_detector.py
+│   │   metadata.py
+│   │   scanner.py
+│   rag
+│   │   prompt_builder.py
+│   │   rag_pipeline.py
+│   │   response_generator.py
+│   repository
+│   │   repository_graph_pipeline.py
+│   │   repository_pipeline.py
+│   search
+│   │   search_pipeline.py
+│   │   similarity.py
+data
+│   database
+│   │   codeinsight.db
+│   repositories
+│   │   current_repo
+main.py
+repository_graph.json
+requirements.txt
+test.py
+tests
+│   auths.py
+│   database.py
+│   utils.py

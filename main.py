@@ -1,14 +1,38 @@
 from app.ingestion.ingestion_pipeline import ingestion_pipeline
+
 from app.chunking.chunk_pipeline import build_repository_chunks
+
 from app.embedding.embedding_pipeline import embedding_pipeline
+
 from app.database.store import store_chunks
 from app.database.loader import load_embeddings
-from app.rag.rag_pipeline import rag_pipeline
 
 from app.database.schema import create_schema
+from app.database.connection import get_connection
+
+from app.chat.chat_pipeline import chat_pipeline
+from app.chat.conversation_memory import (
+    get_conversation_history
+)
+
+from app.repository.repository_pipeline import (
+    repository_pipeline
+)
+
+from app.repository.repository_graph_pipeline import (
+    repository_graph_pipeline
+)
+
+from app.impact.impact_analysis_pipeline import (
+    impact_analysis_pipeline
+)
+
+
+# --------------------------------------------------
+# DATABASE SETUP
+# --------------------------------------------------
 
 create_schema()
-from app.database.connection import get_connection
 
 conn = get_connection()
 cursor = conn.cursor()
@@ -23,10 +47,22 @@ print(cursor.fetchall())
 
 conn.close()
 
+
+# --------------------------------------------------
+# CONFIG
+# --------------------------------------------------
+
 REPO_URL = "https://github.com/winnermarvi/CodeInsights_GitHub"
 
-# Phase 1
-ingestion_data = ingestion_pipeline(REPO_URL)
+
+# --------------------------------------------------
+# PHASE 1
+# INGESTION
+# --------------------------------------------------
+
+ingestion_data = ingestion_pipeline(
+    REPO_URL
+)
 
 repository_path = ingestion_data["repo_path"]
 inventory = ingestion_data["inventory"]
@@ -34,7 +70,12 @@ inventory = ingestion_data["inventory"]
 print("\nTOTAL FILES:")
 print(len(inventory))
 
-# Phase 2
+
+# --------------------------------------------------
+# PHASE 2
+# CHUNKING
+# --------------------------------------------------
+
 chunk_data = build_repository_chunks(
     repository_path=repository_path,
     inventory=inventory
@@ -46,7 +87,12 @@ print(len(chunk_data["chunks"]))
 print("\nFAILED FILES:")
 print(chunk_data["failed_files"])
 
-# Phase 3
+
+# --------------------------------------------------
+# PHASE 3
+# EMBEDDINGS
+# --------------------------------------------------
+
 embedded_data = embedding_pipeline(
     chunk_data
 )
@@ -57,30 +103,105 @@ print(len(embedded_data["chunks"]))
 print("\nFAILED CHUNKS:")
 print(embedded_data["failed_chunks"])
 
-# Phase 4
+
+# --------------------------------------------------
+# PHASE 4
+# STORE EMBEDDINGS
+# --------------------------------------------------
+
 store_chunks(
     embedded_data["chunks"]
 )
 
 print("\nSTORED TO DATABASE")
 
-#Phase 5
+
+# --------------------------------------------------
+# PHASE 5
+# LOAD EMBEDDINGS
+# --------------------------------------------------
+
 embeddings = load_embeddings()
 
 print("\nTOTAL EMBEDDINGS IN DATABASE:")
 print(len(embeddings))
 
+
+# --------------------------------------------------
+# PHASE 7
+# REPOSITORY EXTRACTION
+# --------------------------------------------------
+
+repository_data = repository_pipeline(
+    ingestion_result=ingestion_data
+)
+
+print("\nREPOSITORY FILES:")
+print(len(repository_data))
+
+
+# --------------------------------------------------
+# PHASE 7
+# KNOWLEDGE GRAPH
+# --------------------------------------------------
+
+repository_graph = repository_graph_pipeline(
+    repository_data
+)
+
+print("\nGRAPH NODES:")
+print(len(repository_graph["nodes"]))
+
+print("\nGRAPH EDGES:")
+print(len(repository_graph["edges"]))
+
+from app.architecture.service_discovery import (
+    discover_services
+)
+
+service_graph = discover_services(
+    repository_graph
+)
+
+print("\nSERVICE NODES:")
+print(service_graph["nodes"])
+
+print("\nSERVICE EDGES:")
+for edge in service_graph["edges"]:
+    print(edge)
+
+
+# --------------------------------------------------
+# PHASE 9
+# IMPACT ANALYSIS
+# --------------------------------------------------
+
+impact_report = impact_analysis_pipeline(
+    graph=repository_graph,
+    changed_function="search_pipeline"
+)
+
+print("\nIMPACT REPORT:")
+print(impact_report)
+
+
+# --------------------------------------------------
+# PHASE 8
+# CHAT
+# --------------------------------------------------
+
 question = "How does search_pipeline work?"
-
-# response = rag_pipeline(question)
-
-from app.chat.chat_pipeline import chat_pipeline
 
 response = chat_pipeline(
     question=question
 )
 
+print("\nQUESTION:")
+print(question)
+
+print("\nANSWER:")
 print(response)
+
 
 question = "What does it call next?"
 
@@ -88,10 +209,30 @@ response = chat_pipeline(
     question=question
 )
 
+print("\nQUESTION:")
+print(question)
+
+print("\nANSWER:")
 print(response)
 
-from app.chat.conversation_memory import (
-    get_conversation_history
+
+# --------------------------------------------------
+# MEMORY CHECK
+# --------------------------------------------------
+
+print("\nCONVERSATION HISTORY:")
+print(
+    get_conversation_history()
 )
 
-print(get_conversation_history())
+
+from app.architecture.folder_diagram import (
+    save_folder_diagram
+)
+
+folder_diagram = save_folder_diagram(
+    inventory
+)
+
+print("\nFOLDER DIAGRAM:")
+print(folder_diagram)

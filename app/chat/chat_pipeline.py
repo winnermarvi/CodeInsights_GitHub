@@ -13,12 +13,6 @@ def chat_pipeline(question):
 
     rewritten_question = rewrite_query(question)
 
-    print("\nORIGINAL QUESTION:")
-    print(question)
-
-    print("\nREWRITTEN QUESTION:")
-    print(rewritten_question)
-
     answer = rag_pipeline(rewritten_question)
 
     add_assistant_message(answer)
