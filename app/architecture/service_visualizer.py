@@ -34,6 +34,6 @@ def visualize_service_graph(service_graph):
     )
 
     net.write_html(
-        "data/graph/service_diagram.html",
+        "data/architecture/service_diagram.html",
         notebook=False
     )

@@ -66,6 +66,6 @@ def visualize_dependency_graph(graph):
     )
 
     net.write_html(
-        "data/graph/dependency_graph.html",
+        "data/architecture/dependency_graph.html",
         notebook=False
     )

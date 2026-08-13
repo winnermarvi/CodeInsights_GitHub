@@ -27,6 +27,9 @@ from app.impact.impact_analysis_pipeline import (
     impact_analysis_pipeline
 )
 
+from app.architecture.architecture_pipeline import (
+    architecture_pipeline
+)
 
 # --------------------------------------------------
 # DATABASE SETUP
@@ -149,38 +152,24 @@ repository_graph = repository_graph_pipeline(
     repository_data
 )
 
-print("\nGRAPH NODES:")
-print(len(repository_graph["nodes"]))
-
-print("\nGRAPH EDGES:")
-print(len(repository_graph["edges"]))
-
-from app.architecture.service_discovery import (
-    discover_services
+architecture_result = architecture_pipeline(
+    inventory=inventory,
+    repository_graph=repository_graph
 )
 
-service_graph = discover_services(
-    repository_graph
+print("\nARCHITECTURE OUTPUTS:")
+
+print(
+    architecture_result["folder_diagram"]
 )
 
-print("\nSERVICE NODES:")
-print(service_graph["nodes"])
-
-print("\nSERVICE EDGES:")
-for edge in service_graph["edges"]:
-    print(edge)
-
-from app.architecture.service_visualizer import (
-    visualize_service_graph
+print(
+    architecture_result["dependency_diagram"]
 )
 
-visualize_service_graph(
-    service_graph
+print(
+    architecture_result["service_diagram"]
 )
-
-print("\nSERVICE DIAGRAM GENERATED")
-
-
 # --------------------------------------------------
 # PHASE 9
 # IMPACT ANALYSIS

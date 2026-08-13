@@ -54,7 +54,7 @@ def generate_folder_diagram(inventory):
 
 def save_folder_diagram(
     inventory,
-    output_path="data/graph/folder_diagram.txt"
+    output_path="data/architecture/folder_diagram.txt"
 ):
 
     diagram = generate_folder_diagram(
