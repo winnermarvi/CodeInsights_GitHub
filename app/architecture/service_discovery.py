@@ -1,3 +1,4 @@
+
 def get_service_name(file_path):
 
     if not file_path.startswith("app/"):
@@ -11,6 +12,7 @@ def get_service_name(file_path):
     return parts[1]
 
 
+
 def build_node_lookup(graph):
 
     lookup = {}
@@ -20,6 +22,7 @@ def build_node_lookup(graph):
         lookup[node["id"]] = node
 
     return lookup
+
 
 
 def discover_services(graph):

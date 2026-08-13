@@ -4,6 +4,9 @@
 LICENSE
 README.md
 app
+│   architecture
+│   │   folder_diagram.py
+│   │   service_discovery.py
 │   chat
 │   │   chat_pipeline.py
 │   │   conversation_memory.py
@@ -52,6 +55,8 @@ app
 data
 │   database
 │   │   codeinsight.db
+│   graph
+│   │   folder_diagram.txt
 │   repositories
 │   │   current_repo
 main.py

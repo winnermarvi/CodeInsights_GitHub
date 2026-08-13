@@ -170,6 +170,16 @@ print("\nSERVICE EDGES:")
 for edge in service_graph["edges"]:
     print(edge)
 
+from app.architecture.service_visualizer import (
+    visualize_service_graph
+)
+
+visualize_service_graph(
+    service_graph
+)
+
+print("\nSERVICE DIAGRAM GENERATED")
+
 
 # --------------------------------------------------
 # PHASE 9
