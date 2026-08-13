@@ -18,21 +18,6 @@ def search_pipeline(query,k=5):
         similarities=retrieved_ids
     )
 
-    print("\nQUERY:")
-    print(query)
-
-    print("\nQUERY EMBEDDING LENGTH:")
-    print(len(query_embedding))
-
-    print("\nTOTAL EMBEDDINGS:")
-    print(len(repo_id_embeddings))
-
-    print("\nRETRIEVED IDS:")
-    print(retrieved_ids)
-
-    print("\nRETRIEVED CHUNKS:")
-    print(len(retrieved_chunks))
-
     return retrieved_chunks
 
 

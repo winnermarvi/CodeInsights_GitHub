@@ -34,8 +34,6 @@ def repository_graph_pipeline(repository_data):
         repository_graph
     )
 
-    print(file_lookup)
-
     # PASS 3
     # Process imports
 
