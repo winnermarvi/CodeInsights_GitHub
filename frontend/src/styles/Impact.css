@@ -1,0 +1,322 @@
+.impact-page-container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem 1.5rem;
+    width: 100%;
+    color: #e2e8f0;
+}
+
+/* Page Header */
+.impact-header {
+    margin-bottom: 2rem;
+}
+
+.impact-title {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.impact-subtitle {
+    font-size: 1rem;
+    color: #94a3b8;
+}
+
+/* Glassmorphism Card Theme */
+.ci-card {
+    background: rgba(18, 20, 29, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+}
+
+/* Input Card & Form */
+.impact-input-card {
+    padding: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.impact-form {
+    display: flex;
+    gap: 12px;
+}
+
+.impact-input-wrapper {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.impact-input-icon {
+    position: absolute;
+    left: 16px;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+}
+
+.impact-input {
+    width: 100%;
+    background: rgba(10, 11, 16, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    padding: 14px 16px 14px 48px;
+    font-size: 0.95rem;
+    color: #ffffff;
+    outline: none;
+    font-family: inherit;
+    transition: all 0.2s ease;
+}
+
+.impact-input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+    background: rgba(10, 11, 16, 0.95);
+}
+
+.impact-btn {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 0 24px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
+    white-space: nowrap;
+}
+
+.impact-btn:hover:not(:disabled) {
+    opacity: 0.95;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.45);
+}
+
+.impact-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Empty State */
+.impact-empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: rgba(18, 20, 29, 0.3);
+    border: 1px dashed rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+}
+
+.impact-empty-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    margin: 0 auto 1.25rem auto;
+}
+
+.impact-empty-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 0.5rem;
+}
+
+.impact-empty-desc {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+/* Result Summary Cards Grid */
+.impact-results-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.impact-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+}
+
+.impact-summary-card {
+    background: rgba(18, 20, 29, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.summary-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.summary-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Status & Risk Badges */
+.status-found-tag {
+    color: #34d399;
+    font-size: 0.95rem;
+}
+
+.status-notfound-tag {
+    color: #f87171;
+    font-size: 0.95rem;
+}
+
+.risk-badge {
+    display: inline-flex;
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+.risk-low {
+    background: rgba(16, 185, 129, 0.1);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.risk-medium {
+    background: rgba(245, 158, 11, 0.1);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.risk-high {
+    background: rgba(239, 68, 68, 0.1);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+/* Panels Grid */
+.impact-panels-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.impact-panel {
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.impact-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.85rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.impact-panel-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #f1f5f9;
+}
+
+.impact-panel-count {
+    font-size: 0.75rem;
+    background: rgba(99, 102, 241, 0.15);
+    color: #818cf8;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.impact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.impact-list-item {
+    background: rgba(10, 11, 16, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    color: #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.15s ease;
+}
+
+.impact-list-item:hover {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(129, 140, 248, 0.3);
+}
+
+.list-icon {
+    color: #818cf8;
+    font-size: 0.85rem;
+}
+
+.impact-list-empty {
+    color: #64748b;
+    font-size: 0.85rem;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.code-font {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Responsiveness */
+@media (max-width: 900px) {
+    .impact-summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .impact-panels-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .impact-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .impact-form {
+        flex-direction: column;
+    }
+}

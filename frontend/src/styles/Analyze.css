@@ -1,0 +1,393 @@
+.analyze-container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem 1.5rem;
+    width: 100%;
+    color: #e2e8f0;
+}
+
+/* Brand Header */
+.ci-brand-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.ci-brand-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.ci-brand-icon {
+    color: #818cf8;
+}
+
+.ci-brand-subtitle {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 4px;
+    letter-spacing: 0.02em;
+}
+
+/* Hero Section */
+.ci-hero {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.ci-hero-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 12px;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #818cf8;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.ci-hero-title {
+    font-size: 2.75rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+    line-height: 1.15;
+}
+
+.ci-hero-title span {
+    background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ci-hero-subtitle {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Repository Input & Status Cards */
+.ci-card {
+    background: rgba(18, 20, 29, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 1.75rem;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2.5rem;
+}
+
+.ci-status-card {
+    margin-bottom: 2.5rem;
+    padding: 1.25rem 1.75rem;
+}
+
+.ci-status-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ci-status-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #f1f5f9;
+}
+
+.ci-status-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ci-status-badge-inactive {
+    color: #94a3b8;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.ci-status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.ci-status-dot-inactive {
+    background-color: #64748b;
+    box-shadow: none;
+}
+
+.ci-search-form {
+    display: flex;
+    gap: 12px;
+}
+
+.ci-input-wrapper {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.ci-input-icon {
+    position: absolute;
+    left: 16px;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+}
+
+.ci-input {
+    width: 100%;
+    background: rgba(10, 11, 16, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    padding: 14px 16px 14px 48px;
+    font-size: 0.95rem;
+    color: #ffffff;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.ci-input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+    background: rgba(10, 11, 16, 0.95);
+}
+
+.ci-btn {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 0 24px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
+    white-space: nowrap;
+}
+
+.ci-btn:hover {
+    opacity: 0.95;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.45);
+}
+
+.ci-btn:active {
+    transform: translateY(0);
+}
+
+/* Metrics Section */
+.ci-section-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ci-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 2.5rem;
+}
+
+.ci-metric-card {
+    background: rgba(18, 20, 29, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 1.25rem;
+    transition: all 0.2s ease;
+}
+
+.ci-metric-card:hover {
+    border-color: rgba(255, 255, 255, 0.12);
+    background: rgba(18, 20, 29, 0.7);
+    transform: translateY(-2px);
+}
+
+.ci-metric-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #94a3b8;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+}
+
+.ci-metric-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #818cf8;
+}
+
+.ci-metric-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+}
+
+.ci-metric-trend {
+    font-size: 0.75rem;
+    margin-top: 4px;
+}
+
+.ci-metric-trend-pending {
+    color: #64748b;
+}
+
+/* Empty State Message */
+.ci-empty-state {
+    text-align: center;
+    margin: 0 0 2.5rem 0;
+    color: #64748b;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Panel & Info Grid Section */
+.ci-panel {
+    background: rgba(18, 20, 29, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.ci-panel-header {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.01);
+}
+
+.ci-panel-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #f1f5f9;
+}
+
+.ci-badge-status {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.ci-badge-waiting {
+    background: rgba(255, 255, 255, 0.05);
+    color: #94a3b8;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ci-info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    padding: 1.25rem;
+}
+
+.ci-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.ci-info-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.ci-info-value {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #f1f5f9;
+}
+
+.ci-info-status-waiting {
+    color: #94a3b8;
+}
+
+/* Footer */
+.ci-footer {
+    margin-top: 4rem;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    text-align: center;
+}
+
+.ci-footer-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #f1f5f9;
+    letter-spacing: -0.01em;
+}
+
+.ci-footer-subtitle {
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+/* Responsiveness */
+@media (max-width: 900px) {
+
+    .ci-metrics-grid,
+    .ci-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .ci-metrics-grid,
+    .ci-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ci-search-form {
+        flex-direction: column;
+    }
+
+    .ci-hero-title {
+        font-size: 2rem;
+    }
+}

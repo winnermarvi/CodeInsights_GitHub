@@ -1,0 +1,515 @@
+/* Container & Theme Setup */
+.arch-page-container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem 1.5rem;
+    width: 100%;
+    background-color: #16171d;
+    color: #f3f4f6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Header */
+.arch-header {
+    margin-bottom: 1.75rem;
+}
+
+.arch-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #f3f4f6;
+    margin-bottom: 0.25rem;
+}
+
+.arch-subtitle {
+    font-size: 0.875rem;
+    color: #9ca3af;
+}
+
+/* Flat Card Base */
+.arch-card {
+    background: #1b1c23;
+    border: 1px solid #2e303a;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Overview Cards */
+.arch-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.arch-overview-card {
+    background: #1b1c23;
+    border: 1px solid #2e303a;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.overview-label {
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #9ca3af;
+    font-weight: 600;
+}
+
+.overview-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #f3f4f6;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.overview-desc {
+    font-size: 0.725rem;
+    color: #6b7280;
+}
+
+/* 4. Graph Type Selector Tabs with Active State & Icons */
+.arch-tabs-container {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 1.25rem;
+    background: #121318;
+    padding: 4px;
+    border-radius: 6px;
+    border: 1px solid #2e303a;
+    width: fit-content;
+}
+
+.arch-tab-btn {
+    background: transparent;
+    border: 1px solid transparent;
+    color: #9ca3af;
+    padding: 6px 14px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.15s ease;
+}
+
+.arch-tab-btn .tab-icon {
+    display: flex;
+    align-items: center;
+    color: #9ca3af;
+}
+
+.arch-tab-btn:hover {
+    color: #f3f4f6;
+}
+
+.arch-tab-btn:hover .tab-icon {
+    color: #f3f4f6;
+}
+
+.arch-tab-btn.active {
+    background: #1b1c23;
+    color: #c084fc;
+    border-color: #2e303a;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.arch-tab-btn.active .tab-icon {
+    color: #c084fc;
+}
+
+/* 1. Graph Viewer Section & Control Toolbar */
+.arch-viewer-card {
+    padding: 1rem 1.25rem 1.25rem 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.arch-viewer-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.875rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.arch-viewer-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.graph-type-badge {
+    background: rgba(192, 132, 252, 0.12);
+    color: #c084fc;
+    border: 1px solid rgba(192, 132, 252, 0.3);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.meta-badge-stat {
+    font-size: 0.8125rem;
+    color: #9ca3af;
+}
+
+.meta-badge-stat strong {
+    color: #f3f4f6;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.arch-viewer-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.arch-search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.arch-search-wrapper svg {
+    position: absolute;
+    left: 10px;
+    color: #6b7280;
+}
+
+.arch-search-input {
+    background: #121318;
+    border: 1px solid #2e303a;
+    border-radius: 4px;
+    padding: 5px 10px 5px 30px;
+    font-size: 0.8125rem;
+    color: #f3f4f6;
+    outline: none;
+    width: 160px;
+    font-family: inherit;
+    transition: border-color 0.15s ease;
+}
+
+.arch-search-input:focus {
+    border-color: #c084fc;
+}
+
+.arch-zoom-group {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    background: #121318;
+    border: 1px solid #2e303a;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.control-btn {
+    background: transparent;
+    border: none;
+    color: #9ca3af;
+    height: 26px;
+    min-width: 26px;
+    padding: 0 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.12s ease;
+}
+
+.control-btn:hover {
+    background: #232530;
+    color: #f3f4f6;
+}
+
+.control-btn.text-btn {
+    font-size: 0.725rem;
+    font-weight: 500;
+}
+
+.arch-graph-canvas {
+    position: relative;
+    height: 400px;
+    background: #121318;
+    border: 1px solid #2e303a;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arch-canvas-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(#2e303a 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+}
+
+.arch-placeholder-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.arch-placeholder-badge {
+    width: 38px;
+    height: 38px;
+    border-radius: 6px;
+    background: #1b1c23;
+    border: 1px solid #2e303a;
+    color: #c084fc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+}
+
+.arch-placeholder-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f3f4f6;
+    margin-bottom: 0.25rem;
+}
+
+.arch-placeholder-subtitle {
+    font-size: 0.8125rem;
+    color: #9ca3af;
+    max-width: 360px;
+}
+
+/* 2. Expanded Selected Node Panel */
+.arch-node-panel {
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.arch-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.875rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #2e303a;
+}
+
+.arch-panel-title {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #f3f4f6;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.arch-clear-btn {
+    background: transparent;
+    border: none;
+    color: #9ca3af;
+    font-size: 0.75rem;
+    cursor: pointer;
+}
+
+.arch-clear-btn:hover {
+    color: #f3f4f6;
+    text-decoration: underline;
+}
+
+.arch-node-empty {
+    background: #121318;
+    border: 1px dashed #2e303a;
+    border-radius: 4px;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+}
+
+.arch-node-empty svg {
+    color: #6b7280;
+}
+
+.arch-node-empty-text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #f3f4f6;
+}
+
+.arch-node-empty-subtext {
+    font-size: 0.785rem;
+    color: #9ca3af;
+    max-width: 440px;
+}
+
+.arch-node-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.arch-node-field {
+    background: #121318;
+    border: 1px solid #2e303a;
+    border-radius: 4px;
+    padding: 8px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.arch-node-field.full-width {
+    grid-column: span 2;
+}
+
+.field-label {
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #9ca3af;
+    font-weight: 600;
+}
+
+.field-value {
+    font-size: 0.85rem;
+    color: #f3f4f6;
+    word-break: break-all;
+}
+
+/* 3. Compact Repository Statistics (Dot Leaders) */
+.arch-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+}
+
+.arch-stat-card {
+    padding: 1.25rem;
+}
+
+.arch-stat-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.arch-stat-row {
+    display: flex;
+    align-items: center;
+    font-size: 0.8125rem;
+}
+
+.stat-name {
+    color: #9ca3af;
+    white-space: nowrap;
+}
+
+.stat-dots {
+    flex: 1;
+    border-bottom: 1px dotted #2e303a;
+    margin: 0 8px;
+    align-self: flex-end;
+    margin-bottom: 3px;
+}
+
+.stat-value {
+    color: #f3f4f6;
+    font-weight: 600;
+}
+
+/* Empty State */
+.arch-empty-state-card {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    background: #1b1c23;
+    border: 1px dashed #2e303a;
+    border-radius: 6px;
+    margin-top: 1rem;
+}
+
+.arch-empty-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 6px;
+    background: #121318;
+    border: 1px solid #2e303a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af;
+    margin: 0 auto 0.875rem auto;
+}
+
+.arch-empty-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #f3f4f6;
+    margin-bottom: 0.25rem;
+}
+
+.arch-empty-desc {
+    font-size: 0.825rem;
+    color: #9ca3af;
+}
+
+.code-font {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Responsiveness */
+@media (max-width: 900px) {
+    .arch-overview-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .arch-stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .arch-viewer-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .arch-node-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .arch-node-field.full-width {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .arch-overview-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .arch-tabs-container {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .arch-tab-btn {
+        width: 100%;
+    }
+}
