@@ -513,3 +513,15 @@
         width: 100%;
     }
 }
+
+.diagram-box {
+    white-space: pre-wrap;
+    overflow-x: auto;
+    padding: 20px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #e2e8f0;
+    font-family: monospace;
+    font-size: 14px;
+}
