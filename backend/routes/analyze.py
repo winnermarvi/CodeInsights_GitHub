@@ -5,6 +5,7 @@ from backend.models.responses import AnalyzeResponse
 
 from backend.state import analysis_state
 
+from app.chat.conversation_memory import clear_conversation_history
 from app.ingestion.ingestion_pipeline import ingestion_pipeline
 from app.repository.repository_pipeline import repository_pipeline
 from app.repository.repository_graph_pipeline import (
@@ -19,6 +20,8 @@ router = APIRouter()
 
 @router.post("/analyze", response_model=AnalyzeResponse)
 def analyze_repository(request: AnalyzeRequest):
+
+    clear_conversation_history()
 
     ingestion_data = ingestion_pipeline(
         request.repo_url

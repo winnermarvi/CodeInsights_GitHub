@@ -1,5 +1,8 @@
 conversation_history = []
 
+def clear_conversation_history():
+    conversation_history.clear()
+
 
 def add_user_message(message):
 
