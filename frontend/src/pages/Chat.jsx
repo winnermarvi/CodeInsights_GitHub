@@ -9,7 +9,19 @@ function Chat({
     }
 }) {
     const [inputText, setInputText] = useState('');
-    const [messages, setMessages] = useState([]);
+    const [messages, setMessages] = useState(() => {
+        const savedMessages = localStorage.getItem('codeinsight_chat_messages');
+
+        return savedMessages
+            ? JSON.parse(savedMessages)
+            : [];
+    });
+    useEffect(() => {
+        localStorage.setItem(
+            'codeinsight_chat_messages',
+            JSON.stringify(messages)
+        );
+    }, [messages]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
 

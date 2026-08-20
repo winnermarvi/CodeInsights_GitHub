@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-MODEL_NAME = "llama-3.3-70b-versatile"
+MODEL_NAME = "openai/gpt-oss-120b"
 
 
 client = Groq(
@@ -28,7 +28,8 @@ def generate_response(system_prompt, user_prompt):
             }
         ],
         temperature=0.1,
-        max_completion_tokens=1024
+        reasoning_format="hidden",
+        max_completion_tokens=3072
     )
 
     answer = response.choices[0].message.content

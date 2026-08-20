@@ -5,6 +5,9 @@ from backend.models.responses import AnalyzeResponse
 
 from backend.state import analysis_state
 
+
+from app.embedding.generator import generate_chunk_embedding
+from app.database.store import store_chunks
 from app.chat.conversation_memory import clear_conversation_history
 from app.ingestion.ingestion_pipeline import ingestion_pipeline
 from app.repository.repository_pipeline import repository_pipeline
@@ -39,6 +42,18 @@ def analyze_repository(request: AnalyzeRequest):
         repository_path=ingestion_data["repo_path"],
         inventory=ingestion_data["inventory"]
     )
+
+    embedded_chunks = []
+
+    for chunk in chunk_data["chunks"]:
+        embedding = generate_chunk_embedding(chunk)
+
+        embedded_chunks.append({
+            **chunk,
+            "embedding": embedding
+        })
+
+    store_chunks(embedded_chunks)
 
     analysis_state["ingestion_data"] = ingestion_data
     analysis_state["repository_data"] = repository_data
